@@ -30,7 +30,8 @@ Upscale the spatial resolution.
 - ResNets worked similarly and gave good performance across different data regimes(25%,50%,75%)
 
 - DenseNets performed the best and gave accuracies close to SOTA by using (75% of training : 75% of 75% for training and 25% of 75% for validation), it makes sense because DenseNets oncontary to resnets which have additive connections, densenets concatenate features directly from previous layers similar to Feature Pyramid Networks, which works here because we have information scarcity so densenets here alleviate vanishing gradients problems
-& strengthen feature propagation, in this experiment DenseNet121 was experimened thouroughly and it was the most data efficent model but it also involves few more tricks discussed below.
+& strengthen feature propagation.
+- In these experiments, DenseNet121 was experimened thouroughly and it was the most data efficent model but it also involves few more tricks discussed below.
 
 - Positonal Metadata : Thinking beyond images is important to push the last 1-2 of accuracy%, because the positional metadata has information about lightining, azimuth and camera angle which supplements image data because it indireclty tells about shadow position, its shape and is an important feature in this task.
 
