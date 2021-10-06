@@ -44,5 +44,4 @@ Upscale the spatial resolution.
 -One Caveat would be Image augmentations such as Horizontal & Vertical Flips, RandomBrighntess, Colorjitter will no longer make sense as positional metadata information will be left useless with these augmentations.
 - Another tweak was to get rid of plenty of whitespaces, this can be done with cropping inwards and upscaling it back to original dimension, this boosts accuracy further as local convolutions can focus/attenuate more on figurine rather than background
 - Upscaling to 224 x 224 enhances accuracy by a slight margin across three domains i.e. (25%, 50%, 75%)
--  Thus, using few tricks of the bag, on private data, by training on 18.75% ,37.5% and 56.35% train data,I achieved
-accuracies of 97.65%, 98.20% and 98.757% respectively. In comparison global SOTA with 100% data is 98.77%
+### Thus, using few tricks of the bag, on private data, by training on 18.75% ,37.5% and 56.35% train data, I achieved accuracies of 97.65%, 98.20% and 98.757% respectively. In comparison global SOTA with 100% data is 98.77%. [Source](https://paperswithcode.com/sota/image-classification-on-smallnorb)
