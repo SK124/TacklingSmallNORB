@@ -40,6 +40,9 @@ Upscale the spatial resolution.
 - Positonal Metadata : Thinking beyond images is important to push the last 1-2 of accuracy%, because the positional metadata has information about lightining, azimuth and camera angle which supplements image data because it indireclty tells about shadow position, its shape and is an important feature in this task.
 
 - To use Positonal Metadata, the final architecture has to be modified, after tha images are convoliuted and reduced to a mutilimensional vector, conctenate the image vector with this positional metadata vector and retrain the network with pretrained weigths loaded in the layers prior to this modification.
-
 ![Picture1](https://user-images.githubusercontent.com/47039231/136276209-5062d728-b576-45c8-a4bd-0ca2a77aa2c9.png)
-
+-One Caveat would be Image augmentations such as Horizontal & Vertical Flips, RandomBrighntess, Colorjitter will no longer make sense as positional metadata information will be left useless with these augmentations.
+- Another tweak was to get rid of plenty of whitespaces, this can be done with cropping inwards and upscaling it back to original dimension, this boosts accuracy further as local convolutions can focus/attenuate more on figurine rather than background
+- Upscaling to 224 x 224 enhances accuracy by a slight margin across three domains i.e. (25%, 50%, 75%)
+-  Thus, using few tricks of the bag, on private data, by training on 18.75% ,37.5% and 56.35% train data,I achieved
+accuracies of 97.65%, 98.20% and 98.757% respectively. In comparison global SOTA with 100% data is 98.77%
