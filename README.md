@@ -19,9 +19,9 @@
 - We have 2 channels of grayscale images, to utilize Transfer Learning out of the box we need 3 channels or modify network architectures, can we do better?
 
 - How about handpicking features that might be helpful? The images have no textures in them which is another hurdle, to tackle both of this, we can make a 3rd channel but of what?
-Image Gradients a.k.a Sobel Edges will be a 3rd Channel because it creates an image emphasising edges which will mimic textures here and help us to use Pretrained models without tweaking theri architecture as well.
+- Image Gradients a.k.a Sobel Edges will be an ideal 3rd Channel because it creates an image emphasising edges which will mimic textures here and help us to use Pretrained models without tweaking theri architecture as well.
 
-- Since we are dealing with only a subset of data, we need to take maximum advantage of limited features available so that our modedl (has small bias) and at the same time not overfit (have small variance). This is a Tradeoff Game however this reduces our search space to models with lesser parameters and better feature propagation.
+- Since we are dealing with only a subset of data, we need to take maximum advantage of limited features available so that our moded (has small bias) and at the same time not overfit (have small variance). This is a Tradeoff Game however this reduces our search space to models with lesser parameters and better feature propagation.
 so potential candidates would be MobileNets,InceptionNets,ResNets,DenseNets
 
 - InceptionNets dont work with images of resolution 96x96, what's the go around?
