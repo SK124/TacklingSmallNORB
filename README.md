@@ -33,14 +33,17 @@ Upscale the spatial resolution.
 
 - DenseNets performed the best and gave accuracies close to SOTA by using (75% of training : 75% of 75% for training and 25% of 75% for validation), it makes sense because DenseNets oncontary to resnets which have additive connections, densenets concatenate features directly from previous layers similar to Feature Pyramid Networks, which works here because we have information scarcity so densenets here alleviate vanishing gradients problems
 & strengthen feature propagation.
-- ![image](https://miro.medium.com/max/474/1*GeK21UAbk4lEnNHhW_dgQA.png)
+  ![image](https://miro.medium.com/max/474/1*GeK21UAbk4lEnNHhW_dgQA.png)
+  
 - In these experiments, DenseNet121 was experimened thouroughly and it was the most data efficent model but it also involves few more tricks discussed below.
-       ![image](https://user-images.githubusercontent.com/47039231/136275232-617987e8-5828-42a1-9069-7c587bafd89d.png)
+
+     ![image](https://user-images.githubusercontent.com/47039231/136275232-617987e8-5828-42a1-9069-7c587bafd89d.png)
 
 - Positonal Metadata : Thinking beyond images is important to push the last 1-2 of accuracy%, because the positional metadata has information about lightining, azimuth and camera angle which supplements image data because it indireclty tells about shadow position, its shape and is an important feature in this task.
 
-- To use Positonal Metadata, the final architecture has to be modified, after tha images are convoliuted and reduced to a mutilimensional vector, conctenate the image vector with this positional metadata vector and retrain the network with pretrained weigths loaded in the layers prior to this modification.
+- To use Positonal Metadata, the final architecture has to be modified, after tha images are convoliuted and reduced to a mutilimensional vector, conctenate the image vector with this positional metadata vector and retrain the network with pretrained weigths loaded in the layers prior to this modification. 
    ![Picture1](https://user-images.githubusercontent.com/47039231/136276209-5062d728-b576-45c8-a4bd-0ca2a77aa2c9.png)
+   
 - One Caveat would be Image augmentations such as Horizontal & Vertical Flips, RandomBrighntess, Colorjitter will no longer make sense as positional metadata information will be left useless with these augmentations.
 - Another tweak was to get rid of plenty of whitespaces, this can be done with cropping inwards and upscaling it back to original dimension, this boosts accuracy further as local convolutions can focus/attenuate more on figurine rather than background
 - Upscaling to 224 x 224 enhances accuracy by a slight margin across three domains i.e. (25%, 50%, 75%)
