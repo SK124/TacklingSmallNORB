@@ -41,7 +41,9 @@ Upscale the spatial resolution.
 
 - Positonal Metadata : Thinking beyond images is important to push the last 1-2 of accuracy%, because the positional metadata has information about lightining, azimuth and camera angle which supplements image data because it indireclty tells about shadow position, its shape and is an important feature in this task.
 
-- To use Positonal Metadata, the final architecture has to be modified, after tha images are convoliuted and reduced to a mutilimensional vector, conctenate the image vector with this positional metadata vector and retrain the network with pretrained weigths loaded in the layers prior to this modification. 
+- To use Positonal Metadata, the final architecture has to be modified, after tha images are convoliuted and reduced to a mutilimensional vector, conctenate the image vector with this positional metadata vector and retrain the network with pretrained weigths loaded in the layers prior to this modification.
+
+
    ![Picture1](https://user-images.githubusercontent.com/47039231/136276209-5062d728-b576-45c8-a4bd-0ca2a77aa2c9.png)
    
 - One Caveat would be Image augmentations such as Horizontal & Vertical Flips, RandomBrighntess, Colorjitter will no longer make sense as positional metadata information will be left useless with these augmentations.
